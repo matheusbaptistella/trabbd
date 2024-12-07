@@ -26,7 +26,7 @@ class PedidoBase(BaseModel):
     Status: str = 'E'  # Padrão: "E" para em espera
 
 class PedidoResponse(PedidoBase):
-    Codigo: int  # Retorna o código do pedido ao inserir
+    Codigo: int 
     class Config:
         orm_mode = True
 
@@ -160,10 +160,7 @@ async def criar_e_listar_pedidos(pedido: PedidoBase):
         cursor.close()
         conn.close()
 
-        # Retorna o código do pedido recém-criado e a lista dos pedidos do usuário
-        return {
-            "data": pedidos
-        }
+        return {"data": pedidos}
 
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))

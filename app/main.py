@@ -106,7 +106,6 @@ def add_pedido(cpf):
                 result = response.json()
                 
                 pedidos = result.get("data", [])
-                print("Dados retornados pela API:", pedidos)
                 
                 if pedidos:
                     headers = ["Codigo", "Usuario_CPF", "Espaco_Id", "Administrador_CPF", "Status"]
