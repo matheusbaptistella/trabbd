@@ -1,6 +1,6 @@
 -- Consultas SQL para o banco de dados Postgres
 
--- Listar os jogadores e os times das partidas abertas que o jogador participa
+-- Listar os times das partidas abertas que o jogador participa
 SELECT 
     u.Nome AS Usuario, 
     pt.Time_Comum AS Time,
